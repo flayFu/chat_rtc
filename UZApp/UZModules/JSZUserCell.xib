@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JOa-5m-IaG" customClass="JSZUserCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JOa-5m-IaG" id="z2G-zc-G30">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gi6-iH-bug">
+                        <rect key="frame" x="6" y="11" width="55" height="55"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="55" id="CS6-v9-vQZ"/>
+                            <constraint firstAttribute="width" constant="55" id="EUe-2f-cu1"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="NoS-P2-yla"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="sU5-Zo-hHI"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userId" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioR-wj-gdS">
+                        <rect key="frame" x="67" y="17" width="38" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="BP8-iq-X9D"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ioR-wj-gdS" firstAttribute="leading" secondItem="gi6-iH-bug" secondAttribute="trailing" constant="6" id="6d1-Z9-9hJ"/>
+                    <constraint firstItem="ioR-wj-gdS" firstAttribute="top" secondItem="z2G-zc-G30" secondAttribute="top" constant="17" id="YcK-RP-iMg"/>
+                    <constraint firstItem="ioR-wj-gdS" firstAttribute="leading" secondItem="gi6-iH-bug" secondAttribute="trailing" constant="6" id="d6M-cP-fGz"/>
+                    <constraint firstItem="gi6-iH-bug" firstAttribute="leading" secondItem="z2G-zc-G30" secondAttribute="leading" constant="6" id="eRr-Hu-t8t"/>
+                    <constraint firstItem="gi6-iH-bug" firstAttribute="top" secondItem="z2G-zc-G30" secondAttribute="top" constant="11" id="ms4-kR-cZT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="headImageView" destination="gi6-iH-bug" id="Qr9-jT-WNq"/>
+                <outlet property="userId" destination="ioR-wj-gdS" id="MVX-QV-ntg"/>
+            </connections>
+            <point key="canvasLocation" x="-112" y="-27"/>
+        </tableViewCell>
+    </objects>
+</document>

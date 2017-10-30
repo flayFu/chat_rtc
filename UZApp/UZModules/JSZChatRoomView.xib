@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JSZChatRoomController"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="NPp-ic-6fw" customClass="JSZChatRoomView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="mHu-FC-CEp" userLabel="Remote View" customClass="RTCEAGLVideoView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="427"/>
+                    <subviews>
+                        <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="62v-vF-yOm" userLabel="Local View" customClass="RTCEAGLVideoView">
+                            <rect key="frame" x="275" y="327" width="100" height="100"/>
+                            <color key="backgroundColor" red="0.62861024160000001" green="1" blue="0.46417756560000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="9nj-of-hPX"/>
+                                <constraint firstAttribute="height" constant="100" id="mn7-dY-ktf"/>
+                                <constraint firstAttribute="width" constant="100" id="zes-a5-HJF"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.3577523648" blue="0.46117183470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="62v-vF-yOm" secondAttribute="trailing" id="SIG-jv-6AO"/>
+                        <constraint firstItem="62v-vF-yOm" firstAttribute="bottom" secondItem="mHu-FC-CEp" secondAttribute="bottom" id="X0K-B7-g0p"/>
+                        <constraint firstAttribute="trailing" secondItem="62v-vF-yOm" secondAttribute="trailing" id="fEu-Fk-2Su"/>
+                        <constraint firstAttribute="bottom" secondItem="62v-vF-yOm" secondAttribute="bottom" id="fuQ-m1-R4F"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="mHu-FC-CEp" secondAttribute="bottom" constant="240" id="7tq-Qa-uUD"/>
+                <constraint firstItem="mHu-FC-CEp" firstAttribute="leading" secondItem="NPp-ic-6fw" secondAttribute="leading" id="Uc1-7e-XdW"/>
+                <constraint firstItem="mHu-FC-CEp" firstAttribute="top" secondItem="NPp-ic-6fw" secondAttribute="top" id="dRQ-jq-yer"/>
+                <constraint firstAttribute="trailing" secondItem="mHu-FC-CEp" secondAttribute="trailing" id="uzu-bG-6Kf"/>
+            </constraints>
+            <connections>
+                <outlet property="localView" destination="62v-vF-yOm" id="dJW-RW-l9f"/>
+                <outlet property="remoteView" destination="mHu-FC-CEp" id="1Lb-UV-auu"/>
+                <outlet property="remoteViewLeftConstraint" destination="Uc1-7e-XdW" id="8B8-8s-rJW"/>
+                <outlet property="remoteViewRightConstraint" destination="uzu-bG-6Kf" id="4Gi-gH-KcG"/>
+                <outlet property="remoteViewTopConstraint" destination="dRQ-jq-yer" id="gaU-jk-gXd"/>
+            </connections>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Module Develop</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="css/aui.2.0.css">
+	<style type="text/css">
+		.status-bar {
+			height: 20px;
+			background-color: #03a9f4;
+		}
+
+		.aui-bar-nav .aui-title {
+			font-size: 1rem;
+			font-weight: normal;
+		}
+
+		.submit-area {
+			margin-top: 15px;
+		}
+
+		.submit-btn {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			background-color: #fff;
+			border-style: solid;
+			border-width: thin;
+			border-color: #03a9f4;
+			color: #03a9f4;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="status-bar"></div>
+	<header class="aui-bar aui-bar-nav">
+		<h1 class="aui-title">会议室门口</h1>
+	</header>
+	<article>
+		<ul class="aui-list aui-form-list">
+			<li class="aui-list-header">用户基本信息</li>
+			<li class="aui-list-item">
+				<div class="aui-list-item-inner">
+					<div class="aui-list-item-label-icon">
+						<i class="aui-iconfont aui-icon-home"></i>
+					</div>
+					<div class="aui-list-item-input">
+						<input type="number" name="roomid" placeholder="请输入您的房间id---数字" required>
+					</div>
+				</div>
+			</li>
+			<li class="aui-list-item">
+				<div class="aui-list-item-inner">
+					<div class="aui-list-item-label-icon">
+						<i class="aui-iconfont aui-icon-my"></i>
+					</div>
+					<div class="aui-list-item-input">
+						<input type="number" name="userid" placeholder="请输入您的用户id---数字" required>
+					</div>
+				</div>
+			</li>
+			<li class="aui-list-item">
+				<div class="aui-list-item-inner">
+					<div class="aui-list-item-label-icon">
+						<i class="aui-iconfont aui-icon-my"></i>
+					</div>
+					<div class="aui-list-item-input">
+						<input type="text" name="username" placeholder="请输入您的用户名---可中文" required>
+					</div>
+				</div>
+			</li>
+			<li class="aui-list-item">
+				<div class="aui-list-item-inner">
+					<div class="aui-list-item-label-icon">
+						<i class="aui-iconfont aui-icon-my"></i>
+					</div>
+					<div class="aui-list-item-input">
+						<input type="number" name="adminid" placeholder="请输入当前房主id---数字" required>
+					</div>
+				</div>
+			</li>
+			<li class="aui-list-item">
+				<div class="aui-list-item-inner">
+					<div class="aui-list-item-label-icon">
+						<i class="aui-iconfont aui-icon-info"></i>
+					</div>
+					<div class="aui-list-item-input">
+						<input type="text" name="roomname" placeholder="请输入当前房间名称---可中文" required>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</article>
+	<footer class="submit-area">
+		<div class="aui-btn aui-btn-block submit-btn" tapmode onclick="enterRoom()">进入会议室</div>
+		<div class="aui-btn aui-btn-block submit-btn" tapmode onclick="enterRoom('demoHost')">房主 6 进入会议室</div>
+		<div class="aui-btn aui-btn-block submit-btn" tapmode onclick="enterRoom('demoGuest')">访客 7 进入会议室</div>
+	</footer>
+</body>
+<script>
+	function enterRoom(demoStatus) {
+		var roomid, userid, username, adminid, roomname;
+		switch (demoStatus) {
+			case "demoHost":
+				{
+<!--					roomid = 117121680;-->
+<!--					userid = 13;-->
+<!--					username = 123;-->
+<!--					adminid = 13;-->
+<!--                    roomname = "发财";-->
+
+
+					roomid = 3;
+					userid = 3;
+					username = 3;
+					adminid = 3;
+                    roomname = 3;
+
+
+
+
+<!--                    roomid = 6;-->
+<!--                    userid = 6;-->
+<!--                    username = 6;-->
+<!--                    adminid = 6;-->
+<!--                    roomname = 6;-->
+				}
+				break;
+			case "demoGuest":
+            {
+<!--                roomid = 117121680;-->
+<!---->
+<!---->
+<!--                userid = 13;-->
+<!---->
+<!--                username = 765;-->
+<!--                adminid = 13;-->
+<!--                roomname = "发财";-->
+
+
+					roomid = 3;
+					userid = 2;
+					username = 2;
+					adminid = 3;
+					roomname = 3;
+
+<!--					roomid = 6;-->
+<!--					userid = 7;-->
+<!--					username = 7;-->
+<!--					adminid = 6;-->
+<!--					roomname = 6;-->
+
+				}
+				break;
+			default:
+				{
+					roomid = document.getElementsByName('roomid')[0].value;
+					userid = document.getElementsByName('userid')[0].value;
+					username = document.getElementsByName('username')[0].value;
+					adminid = document.getElementsByName('adminid')[0].value;
+					roomname = document.getElementsByName('roomname')[0].value;
+				}
+		}
+
+		if (roomid && userid && username && adminid && roomname) {
+			var demo = api.require('chatRoomModule');
+			demo.enterRoom({
+				roomid : roomid,
+				userid : userid,
+				username : username,
+				adminid : adminid,
+				roomname : roomname
+			});
+		} else {
+			alert('房间id或用户名等参数为空或格式有误,无法进入房间(⊙﹏⊙)b......');
+		}
+	}
+
+	function apiready() {
+
+	}
+</script>
+
+</html>

@@ -1,0 +1,8 @@
+[
+ {
+    "name":"chatRoomModule",
+    "class":"JSZChatRoomModule",
+    "methods":["enterRoom"],
+    "launchClassMethod":"launchMethod"
+ }
+]
